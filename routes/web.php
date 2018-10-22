@@ -12,20 +12,9 @@
 */
 use App\Task;
 
-Route::get('/tasks', function () {
+Route::get('/tasks','TasksController@index');
 
-//    $tasks=DB::table('tasks')->get();
-    $tasks=Task::all();
-//    return $tasks;
-    return view('tasks.index',compact('tasks'));
-});
+Route::get('/tasks/{tasks}','TasksController@show');
 
 
-Route::get('/tasks/{tasks}', function ($id) {
 
-    $task=Task::find($id);
-
-    //dd($task);
-
-    return view('tasks/show',compact('task'));
-});
