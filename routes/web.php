@@ -18,8 +18,10 @@ Route::get('/tasks/{task}','TasksController@show');
 
 Route::get('/','PostController@index');
 
-Route::get('/testing', function () {
-    return view('welcome');
-});
+//Route::get('/testing', function () {
+//    return view('task2.index');
+//});
 
+Route::get('/testing','PostsController@index');
 
+Route::get('/testing/create','PostsController@create');
