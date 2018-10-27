@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <div class="row">
 
         <div class="col-sm-8 blog-main">
 
@@ -72,8 +71,6 @@
 
         </div><!-- /.blog-main -->
 
-        @include('layout2.sidebar')
 
-    </div><!-- /.row -->
 
 @endsection

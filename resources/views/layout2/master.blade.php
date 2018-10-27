@@ -31,8 +31,12 @@
 
 
 <div class="container">
-    @yield('content')
+    <div class="row">
 
+        @yield('content')
+        @include('layout2.sidebar')
+
+    </div>
 
 </div><!-- /.container -->
 
