@@ -31,6 +31,14 @@ class PostsController extends Controller
 //
 //        $post->save();
 
+        $this->validate(request(),[
+
+            'title'=>'required',
+            'body'=>'required'
+
+        ]);
+
+
         Post::create(//this way of creating a record needs $fillable or $garded in model
           [
               'title'=>request('title'),
