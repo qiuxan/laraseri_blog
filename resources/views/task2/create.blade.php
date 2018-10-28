@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-sm-8 blog-main">
         <h1>Create a Post</h1>
-        <form method="POST" action="/post">
+        <form method="POST" action="/testing">
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" placeholder="Title" name="title">
@@ -15,8 +15,10 @@
 
             </div>
 
+            {{csrf_field()}}
 
-            <button type="submit" class="btn btn-default">Submit</button>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
