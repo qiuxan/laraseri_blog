@@ -9,8 +9,26 @@ class PostsController extends Controller
 {
     //
 
+//    public function show($id){
+//
+//        $post=Post::find($id);
+//        return view('task2.show',compact('post'));
+//    }
+
+
+    public function show(Post $post){
+
+        return view('task2.show',compact('post'));
+    }
+
     public function index(){
-        return view('task2.index');
+
+//        $posts= Post::all();
+        $posts= Post::latest()->get();
+
+
+
+        return view('task2.index',compact('posts'));
 
     }
 
@@ -46,7 +64,7 @@ class PostsController extends Controller
           ]
         );
 
-        return redirect('/');
+        return redirect('/testing');
 
     }
 }

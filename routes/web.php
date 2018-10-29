@@ -27,3 +27,5 @@ Route::get('/testing','PostsController@index');
 Route::get('/testing/create','PostsController@create');
 
 Route::post('/testing','PostsController@store');
+
+Route::get('/testing/{post}','PostsController@show');
