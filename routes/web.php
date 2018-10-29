@@ -29,3 +29,6 @@ Route::get('/testing/create','PostsController@create');
 Route::post('/testing','PostsController@store');
 
 Route::get('/testing/{post}','PostsController@show');
+
+
+Route::post('/testing/{post}/comments','CommentsController@store');

@@ -27,6 +27,29 @@
             </ul>
         </div>
 
+        <hr>
+
+        <div class="card">
+            <div class="card-block">
+
+                <form method="POST" action="/testing/{{$post->id}}/comments">
+
+                    {{csrf_field()}}
+
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your comment here" name="body" >
+
+                        </textarea>
+                    </div>
+
+                    <div class="form-group">
+
+                        <button type="submit" class="btn btn-primary">Add Comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
 
 
