@@ -14,4 +14,10 @@ class Post extends Model
 
         return $this->hasMany(comment::class);
     }
+
+
+    public function comment(){
+
+        return $this->belongsTo(User::class);
+    }
 }

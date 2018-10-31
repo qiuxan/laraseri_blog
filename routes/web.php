@@ -16,7 +16,7 @@ Route::get('/tasks','TasksController@index');
 
 Route::get('/tasks/{task}','TasksController@show');
 
-Route::get('/','PostController@index');
+Route::get('/','PostController@index')->name('home');
 
 //Route::get('/testing', function () {
 //    return view('task2.index');
@@ -32,3 +32,15 @@ Route::get('/testing/{post}','PostsController@show');
 
 
 Route::post('/testing/{post}/comments','CommentsController@store');
+Auth::routes();
+
+Route::get('/register','RegistrationController@create');
+
+Route::post('/register','RegistrationController@store');
+
+
+Route::get('/login','SessionsController@create');
+Route::get('/logout','SessionsController@destroy');
+
+
+//Route::get('/home', 'HomeController@index')->name('home');

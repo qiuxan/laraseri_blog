@@ -12,7 +12,7 @@ class CommentsController extends Controller
     public function store($id){
 
 
-        this
+
         $comment= new Comment;
 
         $comment->body=request('body');
