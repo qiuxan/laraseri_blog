@@ -8,7 +8,14 @@ class SessionsController extends Controller
 {
     //
 
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function create(){
+
+        return view('sessions.create');
 
 
     }
@@ -17,6 +24,17 @@ class SessionsController extends Controller
         auth()->logout();
 
         return redirect()->home();
+
+    }
+
+    public function store(){
+
+       if(!auth()->attempt(request(['email','password']))){
+
+           return back();
+       }
+
+       return redirect()->home();
 
     }
 }

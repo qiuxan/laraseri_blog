@@ -8,7 +8,7 @@ class Post extends Model
 {
     //
 
-    protected $fillable=['title','body'];
+    protected $fillable=['title','body','user_id'];
 
     public function comments(){
 
@@ -16,7 +16,7 @@ class Post extends Model
     }
 
 
-    public function comment(){
+    public function User(){
 
         return $this->belongsTo(User::class);
     }

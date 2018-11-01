@@ -4,7 +4,10 @@
 
     
     </h2>
-    <p class="blog-post-meta">{{$post->created_at->format('jS \\  F Y h:i:s A')}} by <a href="#"></a></p>
+    <p class="blog-post-meta">
+
+        {{$post->user->name}} on
+        {{$post->created_at->format('jS \\  F Y h:i:s A')}} by <a href="#"></a></p>
 
 
     <p>{{$post->body}}</p>

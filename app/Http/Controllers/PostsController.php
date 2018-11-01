@@ -7,6 +7,12 @@ use App\Post;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
+
     //
 
 //    public function show($id){
@@ -49,6 +55,8 @@ class PostsController extends Controller
 //
 //        $post->save();
 
+        //dd(auth()->user()->id);
+
         $this->validate(request(),[
 
             'title'=>'required',
@@ -61,6 +69,7 @@ class PostsController extends Controller
           [
               'title'=>request('title'),
               'body'=>request('body'),
+              'user_id'=>auth()->user()->id,
           ]
         );
 
