@@ -31,22 +31,15 @@ class PostsController extends Controller
     public function index(){
 
 //        $posts= Post::all();
-        $posts= Post::latest();
 
-        if($month=request('month')){
-
-            $posts->whereMonth('created_at',Carbon::parse($month)->month);
-
-        }
-
-        if($year=request('year')){
-
-            $posts->whereYear('created_at',$year);
-
-        }
+        $posts= Post::latest()->filter(request(['month','year']))->get();
 
 
-        $posts=$posts->get();
+     //   $posts= Post::latest();
+
+
+
+        
 
 //        if($year=request('year')){
 //            $posts->whereYear('created_at',$year);
