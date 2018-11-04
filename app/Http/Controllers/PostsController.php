@@ -51,16 +51,12 @@ class PostsController extends Controller
         
 
 
-        $archives=Post::selectRaw('year(created_at) year,monthname(created_at) month,count(*) published')
-
-            ->groupBy('year','month')
-            ->orderByRaw('min(created_at) desc')
-            ->get()->toArray();
+     //   $archives=Post::archives();
 
         //return $archives;
 
 
-        return view('task2.index',compact('posts','archives'));
+        return view('task2.index',compact('posts'));
 
     }
 
