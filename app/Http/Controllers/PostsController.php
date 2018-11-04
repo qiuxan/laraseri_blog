@@ -40,6 +40,15 @@ class PostsController extends Controller
 
 
 
+//        $posts= Post::all();
+
+
+
+     //   $posts= Post::latest();
+
+
+
+        
 
 
         $archives=Post::selectRaw('year(created_at) year,monthname(created_at) month,count(*) published')
