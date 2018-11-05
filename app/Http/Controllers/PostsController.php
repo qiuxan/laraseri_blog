@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Posts;
 use Illuminate\Http\Request;
 use App\Post;
 use Carbon\Carbon;
@@ -28,12 +29,15 @@ class PostsController extends Controller
         return view('task2.show',compact('post'));
     }
 
-    public function index(){
+    public function index(Posts $posts){
 
+//        dd($posts);
 
-        $posts = Post::latest()
-            ->filter(request(['month','year']))
-            ->get();
+        $posts=$posts->all();
+//        $posts=(new \App\Repositories\Posts)->all();
+//        $posts = Post::latest()
+//            ->filter(request(['month','year']))
+//            ->get();
 //        $posts= Post::all();
 //        $posts= Post::latest();
 

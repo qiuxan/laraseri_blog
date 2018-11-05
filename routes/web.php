@@ -12,6 +12,15 @@
 */
 use App\Task;
 
+//App::bind('App\Billing\Stripe',function (){
+//
+//    return new \App\Billing\Stripe(config('services.stripe.secret'));
+//
+//});
+
+
+//dd(App::make('App\Billing\Stripe'));
+
 Route::get('/tasks','TasksController@index');
 
 Route::get('/tasks/{task}','TasksController@show');
