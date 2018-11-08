@@ -27,6 +27,8 @@ Route::get('/tasks/{task}','TasksController@show');
 
 Route::get('/','PostController@index')->name('home');
 
+Route::get('/testing/posts/tags/{tag}','TagsController@index');
+
 //Route::get('/testing', function () {
 //    return view('task2.index');
 //});
